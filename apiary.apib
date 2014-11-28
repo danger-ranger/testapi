@@ -6,30 +6,30 @@ Notes API is a *short texts saving* service similar to its physical paper presen
 # Group Notes
 Notes related resources of the **Notes API**
 
-## Notes Collection [/notes]
-### List all Notes [GET]
+## Things [/things]
+### List all Things [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "Jogging in park"
+          "id": 1, "name": "thing 1"
         }, {
-          "id": 2, "title": "Pick-up posters from post-office"
+          "id": 2, "name": "thing 2"
         }]
 
-### Create a Note [POST]
+### Create a Thing [POST]
 + Request (application/json)
 
-        { "title": "Buy cheese and bread for breakfast." }
+        { "name": "meeple" }
 
 + Response 201 (application/json)
 
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+        { "id": 3, "name": "meeple" }
 
-## Note [/notes/{id}]
-A single Note object with all its details
+## Note [/things/{id}]
+A Thing with all its details
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Thing to do stuff with
 
 ### Retrieve a Note [GET]
 + Response 200 (application/json)
@@ -40,7 +40,7 @@ A single Note object with all its details
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            { "id": 2, "name": "thing 2" }
 
-### Remove a Note [DELETE]
+### Remove a Thing [DELETE]
 + Response 204
